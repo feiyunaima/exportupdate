@@ -1,9 +1,13 @@
-#从s中搜寻需要的源文件。将其编译文件从c里面复制到t里面
-s = "C:/Users/Administrator/Desktop/update/代码/csrcHonesty" #源代码
-c = "D:/tomcat/tomcat7_csrcHonesty/webapps/csrcHonesty" #源编译文件
-t = "C:/Users/Administrator/Desktop/update/编译文件/csrcHonesty" #目标编译文件
-
 import os,shutil
+import configparser
+
+def getconfig():
+    cur_path=os.path.dirname(os.path.realpath(__file__))
+    config_path=os.path.join(cur_path,'config.ini')
+    conf=configparser.ConfigParser()
+    conf.read(config_path)
+    return conf
+
 def findfiles(file_dir):
     list = []
     for root,dirs,files in os.walk(file_dir):
@@ -27,6 +31,11 @@ def copycompile(s,c,t):
         print(" copy "+cf+" to "+tf)
 
 if __name__ =='__main__':
+    config = getconfig()
+    s = config.get('path', 's_dir')
+    c = config.get('path', 'c_dir')
+    t = config.get('path', 't_dir')
     copycompile(s+"/WebRoot",c,t)
     copycompile(s+"/src",c+"/WEB-INF/classes",t+"/WEB-INF/classes")
     print("execute success")
+    input()
