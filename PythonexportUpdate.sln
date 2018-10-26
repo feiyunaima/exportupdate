@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "exportUpdates", "PythonexportUpdate\exportUpdates.pyproj", "{2251CD08-C3B5-494F-B6A9-8BD354FE93F2}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonexportUpdate", "PythonexportUpdate\PythonexportUpdate.pyproj", "{2251CD08-C3B5-494F-B6A9-8BD354FE93F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
