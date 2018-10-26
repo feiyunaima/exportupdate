@@ -3,9 +3,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2251cd08-c3b5-494f-b6a9-8bd354fe93f2</ProjectGuid>
-    <ProjectHome>
-    </ProjectHome>
-    <StartupFile>exportUpdates.py</StartupFile>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>PythonexportUpdate.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,11 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="exportUpdates.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="config.ini" />
-    <Content Include="exportUpdates.exe" />
+    <Compile Include="PythonexportUpdate.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
