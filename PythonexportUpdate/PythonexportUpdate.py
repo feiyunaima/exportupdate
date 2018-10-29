@@ -29,13 +29,27 @@ def copycompile(s,c,t):
             os.makedirs(tpath)
         shutil.copyfile(cf,tf)
         print(" copy "+cf+" to "+tf)
-
+def main():
+    try:
+        config = getconfig()
+    except BaseException as e:
+        print(e)
+        print("read config.ini failed")
+        return
+    try:
+        s = config.get('path', 's_dir')
+        c = config.get('path', 'c_dir')
+        t = config.get('path', 't_dir')
+        WebRoot = config.get('path', 'WebRoot')
+        copycompile(s+"/"+WebRoot,c,t)
+        copycompile(s+"/src",c+"/WEB-INF/classes",t+"/WEB-INF/classes")
+        print("execute success")
+    except BaseException as e:
+        print(e)
+        return   
+    
 if __name__ =='__main__':
-    config = getconfig()
-    s = config.get('path', 's_dir')
-    c = config.get('path', 'c_dir')
-    t = config.get('path', 't_dir')
-    copycompile(s+"/WebRoot",c,t)
-    copycompile(s+"/src",c+"/WEB-INF/classes",t+"/WEB-INF/classes")
-    print("execute success")
-    input()
+    try:
+        main()
+    finally:
+        input()
